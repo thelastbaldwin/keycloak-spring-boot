@@ -10,9 +10,9 @@ This project demonstrates how to secure a Spring Boot application using Keycloak
 
 ## Prerequisites
 
-- Java 21+
-- Maven
-- Keycloak Server 21+
+- Java 21.0.2
+- Maven 3.8.6
+- Keycloak Server 24.0.0
 
 ## Getting Started
 
@@ -22,11 +22,11 @@ These instructions will get you a copy of the project up and running on your loc
 
 1. Clone the repository:
     ```bash
-    git clone git@github.com:ali-bouali/keycloak-integration-with-spring-boot-3.git
+    git https://github.com/raj713335/keycloak-spring-boot
     ```
 2. Navigate into the project directory:
     ```bash
-    cd your-repository-name
+    cd keycloak-spring-boot
     ```
 3. Use Maven to build the project:
     ```bash
