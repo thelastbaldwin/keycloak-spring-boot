@@ -1,4 +1,4 @@
-package com.example.keycloak_spring_boot;
+package com.example.keycloak_spring_boot.controller;
 
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -7,8 +7,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("/api")
-public class DemoController {
-
+public class ControllerHello{
 
     @GetMapping("/hello")
     public ResponseEntity<String> sayHello() {
@@ -24,5 +23,4 @@ public class DemoController {
     public ResponseEntity<String> sayHelloToUser() {
         return ResponseEntity.ok("Hello User");
     }
-
 }
