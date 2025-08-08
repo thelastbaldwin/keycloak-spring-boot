@@ -1,5 +1,6 @@
 package com.example.keycloak_spring_boot.controller;
 
+import com.example.keycloak_spring_boot.security.MealwurmAuthenticationToken;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -20,7 +21,8 @@ public class ControllerHello{
     }
 
     @GetMapping("/user")
-    public ResponseEntity<String> sayHelloToUser() {
-        return ResponseEntity.ok("Hello User");
+    public ResponseEntity<String> sayHelloToUser(final MealwurmAuthenticationToken auth) {
+        String userId = auth.getUserId();
+        return ResponseEntity.ok("Hello User: " + userId);
     }
 }

@@ -1,23 +1,16 @@
-<h1 align="center"><a href="https://www.udemy.com/course/keycloak-sso-course-from-zero-to-hero/"> Keycloak: SSO Course from Zero to Hero </a></h1>
-
-<p align="center">
-  <img src="data/keycloak.png" />
-</p> 
-
-
 # Keycloak Integration with Spring Boot 3
 
 This project demonstrates how to secure a Spring Boot application using Keycloak, a powerful open-source Identity and Access Management tool.
 
 ## Features
 
-- Single Sign-On (SSO) with OpenID Connect
-- Role-Based Access Control (RBAC)
-- Fine-Grained Authorization
+- Custom authentication token
+- Reading authentication token from Controller endpoint
+- Secured endpoints based on keycloak client roles
 
 ## Prerequisites
 
-- Java 21.0.2
+- Java 24.0.0
 - Maven 3.8.6
 - Keycloak Server 24.0.0
 
@@ -29,7 +22,7 @@ These instructions will get you a copy of the project up and running on your loc
 
 1. Clone the repository:
     ```bash
-    git https://github.com/raj713335/keycloak-spring-boot
+    git https://github.com/thelastbaldwin/keycloak-spring-boot.git
     ```
 2. Navigate into the project directory:
     ```bash
@@ -44,6 +37,8 @@ These instructions will get you a copy of the project up and running on your loc
     mvn spring-boot:run
     ```
 
+I recommend just opening and running the project in IntelliJ.
+
 ### Keycloak Setup
 
 1. Run the docker-compose file:
@@ -51,20 +46,17 @@ These instructions will get you a copy of the project up and running on your loc
     docker-compose up -d
     ```
 2. Navigate to [Keycloak Admin UI Console](http://localhost:9090 "Keycloak Admin UI Console")
-3. Create a new Real and name ut ```Alibou``` or update the ```application.yml``` file and specify your Realm name
-4. Create Roles
-5. Create Users
-6. Assign roles to users
+3. Create a new Realm and name it ```Mealwurm```
+4. Create a client named `mealwurm` with a clientId of `mealwurm`
+5. Under capability config, turn on client authentication
+6. Create client roles `user` and `admin`
+7. Create users
+6. Assign client roles to users. Be sure to filter by client.
 
 ## Usage
 
-TBD
-
-## Contributing
-
-Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
-
-Please make sure to update tests as appropriate.
+Copy the client_secret from the keycloak admin console under the meallwurm client and update the postman calls. Use the included postman collection to gain an access token. Use that auth token along with appropriate calls to
+`/api/user` and `/api/admin` to see the effects of the security chain, JwtConverter and MealwurmAuthenticationToken
 
 ## License
 

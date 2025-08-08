@@ -74,12 +74,12 @@
 					"urlencoded": [
 						{
 							"key": "client_id",
-							"value": "demo",
+							"value": "mealwurm",
 							"type": "text"
 						},
 						{
 							"key": "client_secret",
-							"value": "sLTwaOZlPU7eR938qzThhz8RIj5WVJUO",
+							"value": "<your client secret>",
 							"type": "text"
 						},
 						{
@@ -89,12 +89,12 @@
 						},
 						{
 							"key": "username",
-							"value": "user1",
+							"value": "<username>",
 							"type": "text"
 						},
 						{
 							"key": "password",
-							"value": "123456",
+							"value": "<password>",
 							"type": "text"
 						},
 						{
@@ -105,15 +105,15 @@
 					]
 				},
 				"url": {
-					"raw": "http://localhost:8080/realms/Demo/protocol/openid-connect/token",
+					"raw": "http://localhost:9090/realms/mealwurm/protocol/openid-connect/token",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
-					"port": "8080",
+					"port": "9090",
 					"path": [
 						"realms",
-						"Demo",
+						"mealwurm",
 						"protocol",
 						"openid-connect",
 						"token"
